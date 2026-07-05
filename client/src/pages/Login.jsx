@@ -109,7 +109,7 @@ const Login = () => {
                   color: "#001529",
                 }}
               >
-                Book a Doctor
+                MediBook
               </Title>
             </Space>
 
