@@ -10,7 +10,7 @@ const { welcomeEmail } = require("../utils/emailTemplates");
 // @access  Public
 // ─────────────────────────────────────────────────────────────
 const register = asyncHandler(async (req, res) => {
-  const { name, email, password, phone } = req.body;
+  const { name, email, password, phone, role } = req.body;
 
   if (!name || !email || !password) {
     res.status(400);
@@ -26,24 +26,13 @@ const register = asyncHandler(async (req, res) => {
     throw new Error("Email already registered");
   }
 
-  // Default role
-  let role = "patient";
-
-  // Auto Admin Creation
-  if (
-    process.env.ADMIN_EMAIL &&
-    email.toLowerCase() === process.env.ADMIN_EMAIL.toLowerCase()
-  ) {
-    role = "admin";
-  }
-
   const user = await User.create({
-    name,
-    email,
-    password,
-    phone: phone || "",
-    role,
-  });
+  name,
+  email,
+  password,
+  phone: phone || "",
+  role: role || "patient",
+});
 
   // Send welcome email (non-blocking)
   try {

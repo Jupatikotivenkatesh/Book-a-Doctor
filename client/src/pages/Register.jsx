@@ -1,7 +1,16 @@
 import React, { useEffect } from "react";
 import {
-  Form, Input, Button, Typography, Card, Row, Col,
-  Divider, Alert, Space,
+  Form,
+  Input,
+  Button,
+  Typography,
+  Card,
+  Row,
+  Col,
+  Divider,
+  Alert,
+  Space,
+  Radio,
 } from "antd";
 import {
   UserOutlined, MailOutlined, LockOutlined,
@@ -33,9 +42,18 @@ const Register = () => {
   }, [success, navigate]);
 
   const onFinish = (values) => {
-    const { name, email, password, phone } = values;
-    dispatch(register({ name, email, password, phone }));
-  };
+  const { name, email, password, phone, role } = values;
+
+  dispatch(
+    register({
+      name,
+      email,
+      password,
+      phone,
+      role,
+    })
+  );
+};
 
   return (
     <div style={{
@@ -182,7 +200,23 @@ const Register = () => {
                   style={{ borderRadius: 8 }}
                 />
               </Form.Item>
-
+              <Form.Item
+  name="role"
+  label="Register As"
+  initialValue="patient"
+  rules={[
+    {
+      required: true,
+      message: "Please select a role",
+    },
+  ]}
+>
+  <Radio.Group>
+    <Radio value="patient">Patient</Radio>
+    <Radio value="doctor">Doctor</Radio>
+    <Radio value="admin">Admin</Radio>
+  </Radio.Group>
+</Form.Item>
               <Form.Item style={{ marginBottom: 12 }}>
                 <Button
                   type="primary"
