@@ -16,7 +16,7 @@ const Footer = () => {
             <Space align="center" style={{ marginBottom: 16 }}>
               <MedicineBoxOutlined style={{ fontSize: 28, color: "#1890ff" }} />
               <Title level={4} style={{ color: "#ffffff", margin: 0 }}>
-                Book a Doctor
+                MediBook
               </Title>
             </Space>
             <Paragraph style={{ color: "#8c8c8c", lineHeight: 1.8 }}>
@@ -56,7 +56,7 @@ const Footer = () => {
               </Space>
               <Space>
                 <MailOutlined style={{ color: "#1890ff" }} />
-                <Text style={{ color: "#8c8c8c" }}>support@bookadoctor.com</Text>
+                <Text style={{ color: "#8c8c8c" }}>support@medibook.com</Text>
               </Space>
             </Space>
           </Col>

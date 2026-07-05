@@ -91,8 +91,8 @@ const Navbar = () => {
           style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}
         >
           <MedicineBoxOutlined style={{ fontSize: 24, color: "#1890ff" }} />
-          <Text strong style={{ fontSize: 18, color: "#1890ff" }}>
-            Book a Doctor
+          <Text strong style={{ fontSize: 24, color: "#1890ff" }}>
+            MediBook
           </Text>
         </Link>
 

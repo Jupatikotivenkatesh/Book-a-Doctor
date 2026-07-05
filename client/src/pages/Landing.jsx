@@ -105,7 +105,7 @@ const HeroSection = ({ onGetStarted, onBrowse }) => (
               lineHeight: 1.15, marginBottom: 20,
             }}
           >
-            Book Your Doctor{" "}
+            MediBook{" "}
             <span style={{ color: "#69b1ff" }}>Appointment</span>{" "}
             with Ease
           </Title>

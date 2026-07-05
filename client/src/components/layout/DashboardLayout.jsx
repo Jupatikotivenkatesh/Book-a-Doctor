@@ -91,7 +91,7 @@ const SidebarContent = ({ role, location, unreadCount, collapsed, onItemClick })
               whiteSpace: "nowrap", overflow: "hidden",
             }}
           >
-            Book a Doctor
+            MediBook
           </Text>
         )}
       </div>
